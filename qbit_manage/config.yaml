@@ -1,0 +1,187 @@
+# https://github.com/StuffAnThings/qbit_manage/wiki/Config-Setup
+
+commands:
+  dry_run: false # Will not execute any commands, but will print what would be executed.
+  cross_seed: false # Will cross seed torrents from one client to another.
+  recheck: false # Will recheck all torrents.
+  cat_update: true # Will update torrent categories.
+  tag_update: true # Will update torrent tags.
+  rem_unregistered: true # Will remove torrents that are not registered with qBittorrent.
+  tag_tracker_error: true # Will tag torrents that have a tracker error.
+  rem_orphaned: true # Will remove orphaned data.
+  tag_nohardlinks: true # Will tag torrents that have no hardlinks.
+  share_limits: true # Will apply share limits to torrents.
+  skip_qb_version_check: true # Will skip checking qBittorrent version.
+  skip_cleanup: false # Use this to skip emptying the Recycle Bin folder
+
+qbt:
+  host: ghost-direct.usbx.me:13241
+  user: # Empty, IP whitelisted
+  pass: # Empty, IP whitelisted
+
+settings:
+  force_auto_tmm: true # Will force qBittorrent to enable Automatic Torrent Management for each torrent.
+  tracker_error_tag: tracker_error # Will set the tag of any torrents that do not have a working tracker.
+  nohardlinks_tag: noHL # Will set the tag of any torrents with no hardlinks.
+  share_limits_tag: ~share_limit # Will add this tag when applying share limits to provide an easy way to filter torrents by share limit group/priority for each torrent
+  share_limits_min_seeding_time_tag: MinSeedTimeNotReached # Tag to be added to torrents that have not yet reached the minimum seeding time
+  share_limits_min_num_seeds_tag: MinSeedsNotMet # Tag to be added to torrents that have not yet reached the minimum number of seeds
+  share_limits_last_active_tag: LastActiveLimitNotReached # Tag to be added to torrents that have not yet reached the last active limit
+  ignoreTags_OnUpdate: # When running tag-update function, it will update torrent tags for a given torrent even if the torrent has at least one or more of the tags defined here.
+    - noHL
+    - tracker_error
+    - private
+    - public
+    - MinSeedTimeNotReached
+    - MinSeedsNotMet
+    - LastActiveLimitNotReached
+  cat_filter_completed: True # Filters for completed torrents only when running cat_update command
+  share_limits_filter_completed: True # Filters for completed torrents only when running share_limits command
+  tag_nohardlinks_filter_completed: True # Filters for completed torrents only when running tag_nohardlinks command
+
+directory:
+  root_dir: /home/siffreinsg/downloads/qbittorrent
+  remote_dir: /home/siffreinsg/downloads/qbittorrent
+  torrents_dir: /home/siffreinsg/.local/share/qBittorrent/BT_backup
+
+cat:
+  radarr: /home/siffreinsg/downloads/qbittorrent/radarr
+  radarr-sqp: /home/siffreinsg/downloads/qbittorrent/radarr-sqp
+  sonarr: /home/siffreinsg/downloads/qbittorrent/sonarr
+  prowlarr: /home/siffreinsg/downloads/qbittorrent/prowlarr
+  qbittorrent: /home/siffreinsg/downloads/qbittorrent/
+
+cat_change:
+
+tracker:
+  joinpeers|drago-server:
+    tag:
+      - yggtorrent
+      - private
+  sharewood:
+    tag:
+      - sharewood
+      - private
+  other:
+    tag:
+      - other
+      - public
+
+nohardlinks:
+  - radarr-completed
+  - radarr-sqp-completed
+  - sonarr-completed
+
+share_limits:
+  # =====================
+  # Torrents with noHL tag (from *arr)
+  # =====================
+  noHL_private: # Delete private torrents after 7 days of seeding
+    priority: 1
+    include_all_tags:
+      - noHL
+      - private
+    max_ratio: 1
+    max_seeding_time: 10080 # 7 days
+    cleanup: true
+
+  noHL_public: # Delete public torrents immediately
+    priority: 2
+    include_all_tags:
+      - noHL
+      - public
+    max_ratio: 0
+    max_seeding_time: 0
+    cleanup: true
+  # =====================
+  # Torrents from *arr
+  # =====================
+  arr_private:
+    priority: 10
+    include_all_tags:
+      - private
+    categories:
+      - radarr-completed
+      - radarr-sqp-completed
+      - sonarr-completed
+    cleanup: false
+    max_ratio: -1
+    max_seeding_time: -1
+
+  arr_public:
+    priority: 15
+    include_all_tags:
+      - public
+    categories:
+      - radarr-completed
+      - radarr-sqp-completed
+      - sonarr-completed
+    max_ratio: 0
+    max_seeding_time: 0
+    limit_upload_speed: 0
+    cleanup: true
+  # =====================
+  # Manual torrents
+  # =====================
+  manual_private:
+    priority: 20
+    include_all_tags:
+      - private
+    categories:
+      - qbittorrent
+      - prowlarr
+    max_ratio: -1
+    max_seeding_time: -1
+    cleanup: false
+
+  manual_public:
+    priority: 25
+    include_all_tags:
+      - public
+    categories:
+      - qbittorrent
+      - prowlarr
+    max_ratio: 0
+    max_seeding_time: 0
+    limit_upload_speed: 0
+    cleanup: false
+  # =====================
+  # Other torrents
+  # =====================
+  default:
+    priority: 999
+    max_ratio: 1
+    max_seeding_time: 10080 # 7 days
+    cleanup: false
+
+recyclebin:
+  enabled: false
+  empty_after_x_days: 7
+  save_torrents: true
+  split_by_category: true
+
+orphaned:
+  empty_after_x_days: 14
+  exclude_patterns:
+    - '**/.DS_Store'
+    - '**/Thumbs.db'
+    - '**/@eaDir'
+    - '**/temp/**'
+    - '**/*.!qB'
+    - '**/*_unpackerred'
+
+webhooks:
+  error:
+  run_start:
+  run_end:
+  function:
+    cross_seed:
+    recheck:
+    cat_update:
+    tag_update:
+    rem_unregistered:
+    tag_tracker_error:
+    rem_orphaned:
+    tag_nohardlinks:
+    share_limits:
+    cleanup_dirs:

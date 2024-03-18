@@ -1,0 +1,15 @@
+[Unit]
+Description=qBit Manage
+After=network.target
+OnFailure=notify_onfailure@%i.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=~/blackpearrl
+EnvironmentFile=~/blackpearrl/.env
+User=siffreinsg
+Group=siffreinsg
+ExecStart=/usr/local/bin/pipenv run python3 qbit_manage/main.py -c config.yaml
+
+[Install]
+WantedBy=multi-user.target

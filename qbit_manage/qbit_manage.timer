@@ -1,0 +1,11 @@
+[Unit]
+Description=qBit Manage Timer
+Requires=qbit_manage.service
+
+[Timer]
+Unit=qbit_manage.service
+Persistent=true
+OnCalendar=*-*-* 03:05:00
+
+[Install]
+WantedBy=timers.target

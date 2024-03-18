@@ -1,3 +1,6 @@
 [submodule "Plex_Auto_Languages/Plex_Auto_Languages"]
 	path = Plex_Auto_Languages/Plex_Auto_Languages
 	url = git@github.com:RemiRigal/Plex-Auto-Languages.git
+[submodule "qbit_manage/qbit_manage"]
+	path = qbit_manage/qbit_manage
+	url = git@github.com:StuffAnThings/qbit_manage.git
