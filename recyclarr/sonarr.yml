@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/recyclarr/recyclarr/master/schemas/config-schema.json
+sonarr:
+  anime:
+    base_url: https://siffreinsg.ghost.usbx.me/sonarr
+    api_key: !secret sonarr_apikey
+    delete_old_custom_formats: true
+    replace_existing_custom_formats: true
+    quality_definition:
+      type: series
+    media_naming:
+      series: plex
+      season: default
+      episodes:
+        rename: true
+        standard: default
+        daily: default
+        anime: default

@@ -10,3 +10,9 @@ My own tools are included in the scripts directory and are licensed under the GN
 
 .env
 .profile
+
+# Ultra.cc specific tools
+
+## Recyclarr
+
+Docs available here: [Recyclarr on docs.ultra.cc](https://docs.ultra.cc/books/unofficial-application-installers/page/recyclarr)
