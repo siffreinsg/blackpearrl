@@ -15,9 +15,9 @@ commands:
   skip_cleanup: false # Use this to skip emptying the Recycle Bin folder
 
 qbt:
-  host: ghost-direct.usbx.me:13241
-  user: # Empty, IP whitelisted
-  pass: # Empty, IP whitelisted
+  host: # Change to your qBittorrent host
+  user: # Change to your qBittorrent username or leave empty if IP whitelisted
+  pass: # Change to your qBittorrent password or leave empty if IP whitelisted
 
 settings:
   force_auto_tmm: true # Will force qBittorrent to enable Automatic Torrent Management for each torrent.
