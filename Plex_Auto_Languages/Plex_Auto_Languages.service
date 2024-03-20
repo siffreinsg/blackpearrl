@@ -4,11 +4,9 @@ After=network.target
 OnFailure=notify_onfailure@%i.service
 
 [Service]
-WorkingDirectory=~/blackpearrl/Plex_Auto_Languages
-EnvironmentFile=~/blackpearrl/.env
-ExecStart=/usr/local/bin/pipenv run python3 Plex_Auto_Languages/main.py -c config.yaml
-User=siffreinsg
-Group=siffreinsg
+WorkingDirectory=%h/blackpearrl/Plex_Auto_Languages
+EnvironmentFile=%h/blackpearrl/.env
+ExecStart=%h/.local/bin/pipenv run python3 Plex_Auto_Languages/main.py -c config.yaml
 Restart=always
 
 [Install]
