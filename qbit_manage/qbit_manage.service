@@ -1,7 +1,7 @@
 [Unit]
 Description=qBit Manage
 After=network.target
-OnFailure=notify_onfailure@%i.service
+OnFailure=notify_onFailure@%i.service
 
 [Service]
 Type=oneshot
