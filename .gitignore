@@ -6,3 +6,5 @@ Pipfile*
 !scripts/Pipfile*
 
 secrets.yml
+
+README.local.md

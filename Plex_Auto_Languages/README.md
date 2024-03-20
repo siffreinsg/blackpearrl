@@ -5,8 +5,8 @@ Make sure to install the requirements.
 ## Installation
 ### Using pipenv
 
-```
-cd blackpearrl/Plex_Auto_Languages
+```bash
+cd ~/blackpearrl/Plex_Auto_Languages
 pipenv install -r Plex_Auto_Languages/requirements.txt
 ```
 
@@ -16,9 +16,7 @@ Edit the `config.yaml` file in the `~/blackpearrl/Plex_Auto_Languages` directory
 
 Set the `PLEX_URL` and `PLEX_TOKEN` environment variables in the `~/blackpearrl/.env` file.
 
-## Usage
-
-### Systemd
+## Systemd service
 
 Install the systemd service file.
 
