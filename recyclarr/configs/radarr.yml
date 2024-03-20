@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/recyclarr/recyclarr/master/schemas/config-schema.json
+radarr:
+  radarr:
+    delete_old_custom_formats: true
+    replace_existing_custom_formats: true
+    media_naming:
+      folder: plex
+      movie:
+        rename: true
+        standard: default
