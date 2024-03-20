@@ -6,13 +6,41 @@ I do not take credit for any of the tools included in this repo. Please refer to
 
 My own tools are included in the scripts directory and are licensed under the GNU General Public License v3.0.
 
+All scripts and systemd configs are intended to be used on an Ultra.cc seedbox. They may work on other systems, but I make no guarantees.
+
 # Usage
 
-.env
-.profile
+## Clone the repo
 
-# Ultra.cc specific tools
+ALl scripts and configs are intended to be used from the home directory and rely on submodules.
+Clone the repo in the home directory with the following command:
 
-## Recyclarr
+```bash
+cd ~
+git clone --recurse-submodules https://github.com/siffreinsg/blackpearrl
+```
 
-Docs available here: [Recyclarr on docs.ultra.cc](https://docs.ultra.cc/books/unofficial-application-installers/page/recyclarr)
+## Pipenv
+
+Most tools use pipenv to manage dependencies. By default, this repository assumes that pipenv is installed in `~/.local/bin/pipenv`.
+
+If pipenv is installed elsewhere, you may need to modify systemd service files and scripts to reflect the correct path.
+
+Install pipenv for the current user with the following command:
+
+```bash
+pip install --user pipenv
+```
+
+## Set environment variables
+
+Create a file called `.env` in the `~/blackpearrl` directory and add the necesssary environment variables.
+Variables are described in the documentation for each tool.
+
+You may load the environment variables with the following command for the current shell session:
+
+```bash
+set -o allexport
+source .env set
+set +o allexport
+```
