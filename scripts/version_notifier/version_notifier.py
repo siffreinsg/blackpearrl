@@ -41,12 +41,22 @@ GITHUB_PARAMS = {"per_page": 15}
 
 
 def initiate_data_store():
-    if not os.path.exists(APP_STORE_PATH): # If the directory doesn't exist
-        os.mkdir(APP_STORE_PATH) # Create it
+    # Create the data store directory if it doesn't exist
+    if not os.path.exists(APP_STORE_PATH):
+        os.mkdir(APP_STORE_PATH)
         print(f"Created data store on path '{APP_STORE_PATH}'.")
         return
     if not os.path.isdir(APP_STORE_PATH): # If not a directory
         raise Exception(f"{APP_STORE_PATH} is not a directory.") # Raise an error
+
+    # Create the versions directory if it doesn't exist
+    versions_path = os.path.join(APP_STORE_PATH, 'versions')
+    if not os.path.exists(versions_path):
+        os.mkdir(versions_path)
+        print(f"Created versions directory on path '{versions_path}'.")
+        return
+    if not os.path.isdir(versions_path): # If not a directory
+        raise Exception(f"{versions_path} is not a directory.") # Raise an error
 
 
 def load_services():
@@ -65,7 +75,7 @@ def load_services():
 
 
 def get_version_file(service):
-    filename = f"version-{service['label']}.txt"
+    filename = f"{service['label']}.txt"
     filepath = os.path.join(APP_STORE_PATH, 'versions', filename)
 
     if not os.path.exists(filepath):
@@ -76,7 +86,7 @@ def get_version_file(service):
 
 
 def update_version_file(service, version):
-    filename = f"version-{service['label']}.txt"
+    filename = f"{service['label']}.txt"
     filepath = os.path.join(APP_STORE_PATH, 'versions', filename)
 
     with open(filepath, "w") as f:

@@ -8,3 +8,5 @@ Pipfile*
 secrets.yml
 
 README.local.md
+
+scripts/version_notifier/versions
