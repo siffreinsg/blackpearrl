@@ -6,13 +6,13 @@ I do not take credit for any of the tools included in this repo. Please refer to
 
 My own tools are included in the `scripts` directory and are licensed under the GNU General Public License v3.0.
 
-All scripts and systemd configs are intended to be used on an Ultra.cc seedbox. They may work on other systems, but I make no guarantees.
+All scripts and systemd configs are intended to be used on an Ultra.cc seedbox. While I try to make them as generic as possible, they may not be suitable for other hosts.
 
 # Usage
 
 ## Clone the repo
 
-ALl scripts and configs are intended to be used from the `$HOME/blackpearrl` directory and rely on submodules.
+ALl scripts and configs are intended to be used from the `$HOME/blackpearrl` directory and rely on submodules. You will have to update scripts and systemd service files if you clone the repo to a different directory.
 Clone the repo in the home directory with the following command:
 
 ```bash

@@ -22,8 +22,11 @@ Usage:
 import argparse
 import os
 
+import dotenv
 import requests
 
+# Load environment variables
+dotenv.load_dotenv()
 TAUTULLI_URL = os.getenv('TAUTULLI_URL')
 TAUTULLI_API_KEY = os.getenv('TAUTULLI_API_KEY')
 TAUTULLI_NOTIFIER_ID = os.getenv('TAUTULLI_NOTIFIER_ID')
