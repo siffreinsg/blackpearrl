@@ -58,6 +58,17 @@ def initiate_data_store():
     if not os.path.isdir(versions_path): # If not a directory
         raise Exception(f"{versions_path} is not a directory.") # Raise an error
 
+    # Create the services.yaml file if it doesn't exist
+    services_path = os.path.join(APP_STORE_PATH, 'services.yaml')
+    if not os.path.exists(services_path):
+        with open(services_path, "w") as f:
+            f.write("")
+        print(f"Created services file on path '{services_path}'.")
+        print("Please add services to check in the services.yaml file and run the script again.")
+        sys.exit(0)
+    if not os.path.isfile(services_path): # If not a file
+        raise Exception(f"{services_path} is not a file.") # Raise an error
+
 
 def load_services():
     filepath = os.path.join(APP_STORE_PATH, "services.yaml")
