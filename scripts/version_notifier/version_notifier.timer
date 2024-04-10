@@ -1,0 +1,11 @@
+[Unit]
+Description=Version Notifier timer
+Requires=version_notifier.service
+
+[Timer]
+Unit=version_notifier.service
+Persistent=true
+OnCalendar=*-*-* 03:15:00
+
+[Install]
+WantedBy=timers.target
