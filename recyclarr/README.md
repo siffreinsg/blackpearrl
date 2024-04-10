@@ -3,6 +3,8 @@
 Ultra.cc provide an unofficial installer for recyclarr.
 Docs available here: [Recyclarr on docs.ultra.cc](https://docs.ultra.cc/books/unofficial-application-installers/page/recyclarr)
 
+Please refer to the official recyclarr documentation for more information : [Recyclarr](https://recyclarr.dev)
+
 ## Configuration
 
 Using the Ultra.cc installer, recyclarr configuration is located at `~/.apps/recyclarr`.
