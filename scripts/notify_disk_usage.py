@@ -7,9 +7,6 @@ Tautulli script trigger:
    * Notify on recently added
 
 Environment variables:
-    * TAUTULLI_URL - Tautulli URL, e.g. http://localhost:8181
-    * TAUTULLI_API_KEY - Tautulli API key
-    * TAUTULLI_NOTIFIER_ID - Tautulli notifier ID for the script notification agent
     * DISK_USAGE_PATH - Path to check disk usage for, default is home directory
     * DISK_USAGE_THRESHOLD - Disk usage threshold in GB, default is 2500 GB
 
