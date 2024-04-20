@@ -10,3 +10,4 @@ shallow = true
 path = VueTorrent/VueTorrent
 url = https://github.com/VueTorrent/VueTorrent.git
 shallow = true
+branch = latest-release
