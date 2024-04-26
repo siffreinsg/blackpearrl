@@ -31,7 +31,18 @@ systemctl --user daemon-reload
 systemctl --user enable --now qbit_manage
 ```
 
+## Execution on torrent completion
+
+The script can be run when a torrent completes downloading. To do this, you will need to configure qBittorrent to run a script on torrent completion.
+
+1. Open qBittorrent Web UI.
+2. Open the settings.
+3. Go to the "Downloads" section.
+4. In the "Run external program on torrent completion" field, enter `systemctl --user start qbit_manage`.
+
 ## Systemd timer
+
+The script can be run on a schedule using a systemd timer. By default, the script will run every day at 3:05 AM. To change the schedule, edit the `qbit_manage.timer` file.
 
 ```bash
 cd ~/.config/systemd/user
@@ -40,7 +51,7 @@ systemctl --user daemon-reload
 systemctl --user enable --now qbit_manage.timer
 ```
 
-Verify the timer is running.
+Verify the timer is set up.
 
 ```bash
 systemctl --user list-timers
