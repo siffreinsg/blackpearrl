@@ -1,7 +1,7 @@
 [Unit]
 Description=Version Notifier
 Wants=version_notifier.timer
-OnFailure=notify_onfailure@%i.service
+OnFailure=notify_onFailure@%i.service
 
 [Service]
 Type=oneshot
