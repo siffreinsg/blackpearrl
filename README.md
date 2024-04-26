@@ -44,3 +44,15 @@ set -o allexport
 source .env set
 set +o allexport
 ```
+
+## Use Black Pearl .profile
+A `.profile` file is included. This file provides utility functions and aliases for the shell as well as setting up environment variables. You may source this file in your shell profile to have the environment variables available in all shell sessions.
+
+Add the following line to your shell profile:
+
+```bash
+source ~/blackpearrl/.profile
+```
+
+Note that the `.profile` file is intended for bash and zsh. If you use a different shell, you may need to modify the file to work with your shell.
+Please review the file before sourcing it to ensure it is compatible with your shell and environment.

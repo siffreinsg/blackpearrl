@@ -19,4 +19,5 @@ ex() {
     fi
 }
 
-PATH=$HOME/.local/bin:$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$PATH
+export PIPENV_VENV_IN_PROJECT=1
