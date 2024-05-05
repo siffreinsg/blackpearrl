@@ -20,6 +20,11 @@ from pathlib import Path
 import dotenv
 from tautulli_notify.tautulli_notify import notify
 
+# Load environment variables
+dotenv.load_dotenv()
+DISK_USAGE_PATH = os.getenv('DISK_USAGE_PATH', os.path.expanduser('~') + '/')
+DISK_USAGE_THRESHOLD_GB = int(os.getenv('DISK_USAGE_THRESHOLD_GB', 2500))
+
 
 def get_folder_size(folder):
     """Get the size of a folder in bytes.
@@ -33,23 +38,34 @@ def get_folder_size(folder):
     return sum(file.stat().st_size for file in Path(folder).rglob('*') if file.is_file())
 
 
-if __name__ == '__main__':
-    # Load environment variables
-    dotenv.load_dotenv()
-    DISK_USAGE_PATH = os.getenv('DISK_USAGE_PATH', os.path.expanduser('~') + '/')
-    DISK_USAGE_THRESHOLD_GB = int(os.getenv('DISK_USAGE_THRESHOLD_GB', 2500))
+def notify_usage(path: str = DISK_USAGE_PATH, threshold_gb: int = DISK_USAGE_THRESHOLD_GB):
+    """Check disk usage for a path and notify if it exceeds a threshold.
 
+    Args:
+        path (str, optional): Path to check disk usage for. Defaults to DISK_USAGE_PATH.
+        threshold_gb (int, optional): Disk usage threshold in GB. Defaults to DISK_USAGE_THRESHOLD_GB.
+
+    Returns:
+        tuple: A tuple with a boolean indicating if disk usage exceeds the threshold and the disk usage in GB.
+    """
+    disk_usage_b = get_folder_size(path)
+    disk_usage_gb = round(disk_usage_b / 1_000_000_000, 2)
+    exceeding = disk_usage_gb > threshold_gb
+
+    if exceeding:
+        notify(
+            '<b>Disk Usage Alert</b>',
+            f"Path <code>{DISK_USAGE_PATH}</code> disk usage is <b>{disk_usage_gb} GB</b> exceeding threshold of <b>{DISK_USAGE_THRESHOLD_GB} GB</b>."
+        )
+
+    return exceeding, disk_usage_gb
+
+if __name__ == '__main__':
     print(f"Checking disk usage for path {DISK_USAGE_PATH}...")
 
-    disk_usage_b = get_folder_size(DISK_USAGE_PATH)
-    disk_usage_gb = round(disk_usage_b / 1_000_000_000, 2)
+    exceeding, disk_usage_gb = notify_usage()
 
-    if disk_usage_gb <= DISK_USAGE_THRESHOLD_GB:
+    if exceeding:
+        print(f"Disk usage for path {DISK_USAGE_PATH} is about {disk_usage_gb} GB, exceeding threshold of {DISK_USAGE_THRESHOLD_GB} GB.")
+    else:
         print(f"Disk usage for path {DISK_USAGE_PATH} is about {disk_usage_gb} GB, under threshold of {DISK_USAGE_THRESHOLD_GB} GB.")
-        exit()
-
-    print(f"Disk usage for path {DISK_USAGE_PATH} is about {disk_usage_gb} GB, exceeding threshold of {DISK_USAGE_THRESHOLD_GB} GB.")
-    notify(
-        '<b>Disk Usage Alert</b>',
-        f"Path <code>{DISK_USAGE_PATH}</code> disk usage is <b>{disk_usage_gb} GB</b> exceeding threshold of <b>{DISK_USAGE_THRESHOLD_GB} GB</b>."
-    )
