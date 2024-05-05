@@ -47,7 +47,7 @@ def notify(subject, body, api_key=TAUTULLI_API_KEY, notifier_id=TAUTULLI_NOTIFIE
     r = requests.get(base_url.rstrip('/') + '/api/v2', params=params)
     r.raise_for_status()
 
-    return True
+    return r.json()
 
 
 if __name__ == '__main__':
