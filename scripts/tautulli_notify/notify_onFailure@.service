@@ -5,7 +5,7 @@ Description=Send notifications via Tautulli on systemd service failure
 Type=oneshot
 WorkingDirectory=%h/blackpearrl/scripts
 EnvironmentFile=%h/blackpearrl/.env
-ExecStart=%h/.local/bin/pipenv run python3 tautulli_notify/tautulli_notify.py --subject "<b>Systemd services</b>" --body "%i service failed.\n<code>$(systemctl --user status %i)</code>"
+ExecStart=/bin/sh -c '%h/.local/bin/pipenv run python3 tautulli_notify/tautulli_notify.py --subject "<b>Systemd services</b>" --body "%i service failed.\n<code>$(systemctl --user status %i)</code>"'
 
 [Install]
 WantedBy=multi-user.target
