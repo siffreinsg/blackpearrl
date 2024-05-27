@@ -62,6 +62,10 @@ tracker:
     tag:
       - sharewood
       - private
+  upload.cx:
+    tag:
+      - uploadxc
+      - private
   other:
     tag:
       - other
