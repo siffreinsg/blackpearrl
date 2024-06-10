@@ -64,7 +64,7 @@ tracker:
       - private
   upload.cx:
     tag:
-      - uploadxc
+      - uploadcx
       - private
   other:
     tag:
