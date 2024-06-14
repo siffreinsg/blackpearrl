@@ -7,8 +7,8 @@ OnFailure=notify_onFailure@%i.service
 WorkingDirectory=%h/blackpearrl/Plex_Auto_Languages
 EnvironmentFile=%h/blackpearrl/.env
 ExecStart=%h/.local/bin/pipenv run python3 Plex_Auto_Languages/main.py -c config.yaml
-ExecStop=/bin/kill -s TERM $MAINPID
 Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
