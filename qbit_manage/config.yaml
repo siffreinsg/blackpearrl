@@ -66,6 +66,10 @@ tracker:
     tag:
       - uploadcx
       - private
+  digitalcore.club:
+    tag:
+      - digitalcore
+      - private
   other:
     tag:
       - other
