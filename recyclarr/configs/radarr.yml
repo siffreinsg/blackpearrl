@@ -8,3 +8,106 @@ radarr:
       movie:
         rename: true
         standard: default
+
+    include:
+      # Comment out any of the following includes to disable them
+      - template: radarr-quality-definition-movie
+      - template: radarr-quality-profile-hd-bluray-web
+      - template: radarr-custom-formats-hd-bluray-web
+
+    custom_formats:
+      # =================================
+      # HD Bluray + WEB
+      # =================================
+      - trash_ids:
+          # ===== MULTi Audio =====
+          - 72b1548df1ac3175ca105a9ce7043c91  # Multi-Audio
+          - d5f3a1afdb77e6b95e489f7654532d04  # Multi-French
+          # Décommentez la ligne suivante si vous voulez donner un léger bonus à la release si elle
+          # possède effectivement un audio français.
+          - 6d27683346c78d6a3f772e30877910a7  # French Audio
+
+          # ===== HQ Release Groups =====
+          - 5322da05b19d857acc1e75be3edf47b3  # FR HD Bluray Tier 01
+          - 57f34251344be2e283fc30e00e458be6  # FR HD Bluray Tier 02
+          - 9790a618cec1aeac8ce75601a17ea40d  # FR WEB Tier 01
+          - 3c83a765f84239716bd5fd2d7af188f9  # FR WEB Tier 02
+          - 0d94489c0d5828cd3bf9409d309fb32b  # FR Scene Groups
+        quality_profiles:
+          - name: HD Bluray + WEB
+
+      # IMAX Enhanced
+      - trash_ids:
+          - 9f6cbff8cfe4ebbc1bde14c7b7bec0de # IMAX Enhanced
+        quality_profiles:
+          - name: HD Bluray + WEB
+            # score: 0 # Uncomment this line to disable prioritised IMAX Enhanced releases
+
+      # Optional
+      - trash_ids:
+          # - b6832f586342ef70d9c128d40c07b872 # Bad Dual Groups
+          # - 90cedc1fea7ea5d11298bebd3d1d3223 # EVO (no WEBDL)
+          # - ae9b7c9ebde1f3bd336a8cbd1ec4c5e5 # No-RlsGroup
+          # - 7357cf5161efbf8c4d5d0c30b4815ee2 # Obfuscated
+          # - 5c44f52a8714fdd79bb4d98e2673be1f # Retags
+          # - f537cf427b64c38c8e36298f657e4828 # Scene
+        quality_profiles:
+          - name: HD Bluray + WEB
+
+      - trash_ids:
+          # Uncomment the next six lines to allow x265 HD releases with HDR/DV
+          - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 0
+      - trash_ids:
+          - 839bea857ed2c0a8e084f3cbdbd65ecb # x265 (no HDR/DV)
+        quality_profiles:
+          - name: HD Bluray + WEB
+
+      # ===== Versions françaises =====
+      # Activez ou désactiver les Formats Personnalisés suivant si vous souhaitez noter vos releases
+      # avec. Vous pouvez aussi leur attribuer un score en fonction de si vous souhaitez préférer un
+      # certain type d'audio français. Par exemple si vous préférez la VFF. Pensez à vérifier aussi
+      # à quoi corresponde les différents types de version francophones :
+      # https://trash-guides.info/Radarr/radarr-setup-quality-profiles-french-en/#french-audio-versions
+      - trash_ids:
+          - 404c08fd0bd67f39b4d8e5709319094e  # VFF
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 101
+      - trash_ids:
+          - 4cafa20d5584f6ba1871d1b8941aa3cb  # VOF
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 101
+      - trash_ids:
+          - 52772f1cad6b5d26c2551f79bc538a50  # VFI
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 101
+      - trash_ids:
+          - 29b5f7b1a5f20f64228786c3ab1bdc7d  # VF2
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 101
+      - trash_ids:
+          - b6ace47331a1d3b77942fc18156f6df6  # VFQ
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 0
+      - trash_ids:
+          - 95aa50f71a01c82354a7a2b385f1c4d8  # VQ
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 0
+      - trash_ids:
+          - b3fb499641d7b3c2006be1d9eb014cb3  # VFB
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 0
+      - trash_ids:
+          - 9172b2f683f6223e3a1846427b417a3d  # VOSTFR
+        quality_profiles:
+          - name: HD Bluray + WEB
+            score: 0
