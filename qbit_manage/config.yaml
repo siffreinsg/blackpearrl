@@ -56,27 +56,26 @@ cat_change:
 tracker:
   joinpeers|drago-server|loadpeers.org:
     tag:
+      - private
       - yggtorrent
-      - private
-  sharewood:
+  sharewood.tv:
     tag:
-      - sharewood
       - private
+      - sharewood
   upload.cx:
     tag:
-      - uploadcx
       - private
+      - uploadcx
   digitalcore.club:
     tag:
-      - digitalcore
       - private
+      - digitalcore
   tlzdigital.com:
     tag:
-      - tlzdigital
       - private
+      - tlzdigital
   other:
     tag:
-      - other
       - public
 
 nohardlinks:
@@ -162,8 +161,8 @@ share_limits:
   # =====================
   default:
     priority: 999
-    max_ratio: 1
-    max_seeding_time: 10080 # 7 days
+    max_ratio: -1
+    max_seeding_time: -1
     cleanup: false
 
 recyclebin:
