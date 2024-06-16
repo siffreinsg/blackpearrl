@@ -38,11 +38,16 @@ settings:
   cat_filter_completed: True # Filters for completed torrents only when running cat_update command
   share_limits_filter_completed: True # Filters for completed torrents only when running share_limits command
   tag_nohardlinks_filter_completed: True # Filters for completed torrents only when running tag_nohardlinks command
+  cross_seed_tag: cross_seed # Will set the tag of any torrents that are cross seeding.
+  cat_update_all: false # Will update all torrents when running cat_update command.
+  force_retag_all: false # Will force retagging all torrents when running tag_update command.
 
 directory:
   root_dir: /home/siffreinsg/downloads/qbittorrent
   remote_dir: /home/siffreinsg/downloads/qbittorrent
   torrents_dir: /home/siffreinsg/.local/share/qBittorrent/BT_backup
+  cross_seed:
+  orphaned_dir: /home/siffreinsg/downloads/qbittorrent/orphaned_data
 
 cat:
   radarr: /home/siffreinsg/downloads/qbittorrent/radarr
