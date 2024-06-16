@@ -3,8 +3,6 @@ sonarr:
   sonarr:
     delete_old_custom_formats: true
     replace_existing_custom_formats: true
-    quality_definition:
-      type: series
     media_naming:
       series: plex
       season: default
@@ -21,8 +19,6 @@ sonarr:
       - template: sonarr-v4-custom-formats-web-2160p
       - template: sonarr-v4-quality-profile-web-1080p
       - template: sonarr-v4-custom-formats-web-1080p
-      - template: sonarr-v4-quality-profile-anime
-      - template: sonarr-v4-custom-formats-anime
     custom_formats:
       # =================================
       # WEB-2160p
@@ -93,14 +89,3 @@ sonarr:
           - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         quality_profiles:
           - name: WEB-1080p
-
-      # =================================
-      # Remux-1080p - Anime
-      # =================================
-      - trash_ids:
-          - 026d5aadd1a6b4e550b134cb6c72b3ca # Uncensored
-          - b2550eb333d27b75833e25b8c2557b38 # 10bit
-          - 418f50b10f1907201b6cfdf881f467b7 # Anime Dual Audio
-        quality_profiles:
-          - name: Remux-1080p - Anime
-            score: 10
