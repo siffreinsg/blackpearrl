@@ -53,6 +53,7 @@ cat:
   radarr: /home/siffreinsg/downloads/qbittorrent/radarr
   radarr-sqp: /home/siffreinsg/downloads/qbittorrent/radarr-sqp
   sonarr: /home/siffreinsg/downloads/qbittorrent/sonarr
+  sonarr2: /home/siffreinsg/downloads/qbittorrent/sonarr2
   prowlarr: /home/siffreinsg/downloads/qbittorrent/prowlarr
   qbittorrent: /home/siffreinsg/downloads/qbittorrent/
 
@@ -87,6 +88,7 @@ nohardlinks:
   - radarr-completed
   - radarr-sqp-completed
   - sonarr-completed
+  - sonarr2-completed
 
 share_limits:
   # =====================
@@ -120,6 +122,7 @@ share_limits:
       - radarr-completed
       - radarr-sqp-completed
       - sonarr-completed
+      - sonarr2-completed
     cleanup: false
     max_ratio: -1
     max_seeding_time: -1
@@ -132,6 +135,7 @@ share_limits:
       - radarr-completed
       - radarr-sqp-completed
       - sonarr-completed
+      - sonarr2-completed
     max_ratio: 0
     max_seeding_time: 0
     limit_upload_speed: 0
