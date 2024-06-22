@@ -52,7 +52,7 @@ radarr:
           - 55a5b50cb416dea5a50c4955896217ab # DV HDR10+ Boost
 
           # Comment out the next line if you and all of your users' setups are fully DV compatible
-          # - 923b6abef9b17f937fab56cfcf89e1f1 # DV (WEBDL)
+          - 923b6abef9b17f937fab56cfcf89e1f1 # DV (WEBDL)
 
           # Uncomment any of the following if you want them to be added to the quality profile
           # - b6832f586342ef70d9c128d40c07b872 # Bad Dual Groups
