@@ -25,11 +25,3 @@ pipenv install
 ## Usage
 
 Each script should have a README or a header that explains how to use it.
-
-To run a script from Tautulli, a `wrapper.sh` script is provided to run scripts in the `pipenv` environment.
-Pass the script path as the first argument to the `wrapper.sh` script. Subsequent arguments are passed to the script.
-
-For example, to run the `version_notifier.py` script:
-```bash
-./wrapper.sh version_notifier/version_notifier.py
-```

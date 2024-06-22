@@ -9,7 +9,6 @@ python-dotenv = "*"
 pyyaml = "*"
 plexapi = "*"
 timeago = "*"
-fastapi = "*"
 
 [dev-packages]
 
