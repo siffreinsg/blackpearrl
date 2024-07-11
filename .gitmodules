@@ -2,18 +2,24 @@
 path = Plex_Auto_Languages/Plex_Auto_Languages
 url = https://github.com/RemiRigal/Plex-Auto-Languages.git
 shallow = true
+
 [submodule "qbit_manage/qbit_manage"]
 path = qbit_manage/qbit_manage
 url = https://github.com/StuffAnThings/qbit_manage.git
 shallow = true
+
 [submodule "VueTorrent/VueTorrent"]
 path = VueTorrent/VueTorrent
 url = https://github.com/VueTorrent/VueTorrent.git
 shallow = true
 branch = latest-release
+
 [submodule "Kometa/Kometa"]
-	path = Kometa/Kometa
-	url = https://github.com/Kometa-Team/Kometa
+path = Kometa/Kometa
+shallow = true
+url = https://github.com/Kometa-Team/Kometa
+
 [submodule "VueTorrent/vuetorrent-backend"]
-	path = VueTorrent/vuetorrent-backend
-	url = git@github.com:VueTorrent/vuetorrent-backend.git
+path = VueTorrent/vuetorrent-backend
+shallow = true
+url = https://github.com/VueTorrent/vuetorrent-backend.git
