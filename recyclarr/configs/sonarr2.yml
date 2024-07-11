@@ -17,6 +17,8 @@ sonarr:
       - template: sonarr-quality-definition-anime
       - template: sonarr-v4-quality-profile-anime
       - template: sonarr-v4-custom-formats-anime
+      - template: sonarr-v4-quality-profile-anime-vostfr
+      - template: sonarr-v4-custom-formats-anime-vostfr
 
     custom_formats:
       # =================================
@@ -28,4 +30,6 @@ sonarr:
           - 418f50b10f1907201b6cfdf881f467b7 # Anime Dual Audio
         quality_profiles:
           - name: Remux-1080p - Anime
+            score: 10
+          - name: VOSTFR-ANIME
             score: 10
