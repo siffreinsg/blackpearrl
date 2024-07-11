@@ -14,3 +14,6 @@ branch = latest-release
 [submodule "Kometa/Kometa"]
 	path = Kometa/Kometa
 	url = https://github.com/Kometa-Team/Kometa
+[submodule "VueTorrent/vuetorrent-backend"]
+	path = VueTorrent/vuetorrent-backend
+	url = git@github.com:VueTorrent/vuetorrent-backend.git
