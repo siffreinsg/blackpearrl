@@ -7,6 +7,7 @@ shallow = true
 path = qbit_manage/qbit_manage
 url = https://github.com/StuffAnThings/qbit_manage.git
 shallow = true
+branch = master
 
 [submodule "VueTorrent/VueTorrent"]
 path = VueTorrent/VueTorrent
