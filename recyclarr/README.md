@@ -13,7 +13,8 @@ Assuming this repository is cloned to `~/blackpearrl`, the configuration can be 
 
 ```bash
 cd ~/.apps/recyclarr
-ln -s ~/blackpearrl/recyclarr/configs configs
+rm -rf configs # Remove the existing configs directory
+ln -s ~/blackpearrl/recyclarr/configs configs # Link the repository configs directory
 ```
 
 Create a `secrets.yml` file in the `~/.apps/recyclarr` directory with the following content:
