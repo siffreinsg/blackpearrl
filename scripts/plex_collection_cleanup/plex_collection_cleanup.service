@@ -1,0 +1,13 @@
+[Unit]
+Description=Plex Collection Cleanup
+Wants=plex_collection_cleanup.timer
+OnFailure=notify_onFailure@%i.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/blackpearrl/scripts
+EnvironmentFile=%h/blackpearrl/.env
+ExecStart=%h/.local/bin/pipenv run python3 plex_collection_cleanup/plex_collection_cleanup.py
+
+[Install]
+WantedBy=multi-user.target

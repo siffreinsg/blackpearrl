@@ -1,0 +1,11 @@
+[Unit]
+Description=Plex Collection Cleanup Timer
+Requires=plex_collection_cleanup.service
+
+[Timer]
+Unit=plex_collection_cleanup.service
+Persistent=true
+OnCalendar=*-*-* 03:30:00
+
+[Install]
+WantedBy=timers.target
