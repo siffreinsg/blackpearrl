@@ -8,16 +8,24 @@ Tautulli script trigger:
 
 Environment variables:
     * DISK_USAGE_PATH - Path to check disk usage for, default is home directory
-    * DISK_USAGE_THRESHOLD - Disk usage threshold in GB, default is 2500 GB
+    * DISK_USAGE_THRESHOLD_GB - Disk usage threshold in GB, default is 2500 GB
 
 Usage:
     python notify_disk_usage.py
 '''
 
 import os
+import sys
 from pathlib import Path
 
 import dotenv
+
+# Add the parent directory to the path
+file = Path(__file__).resolve()
+parent, root = file.parent, file.parents[1]
+sys.path.append(str(root))
+
+# Import the notify function from tautulli_notify
 from tautulli_notify.tautulli_notify import notify
 
 # Load environment variables

@@ -1,0 +1,13 @@
+[Unit]
+Description=Notify Disk Usage
+Wants=notify_disk_usage.timer
+OnFailure=notify_onFailure@%i.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/blackpearrl/scripts
+EnvironmentFile=%h/blackpearrl/.env
+ExecStart=%h/.local/bin/pipenv run python3 notify_disk_usage/notify_disk_usage.py
+
+[Install]
+WantedBy=multi-user.target
