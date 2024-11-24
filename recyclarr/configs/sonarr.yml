@@ -15,9 +15,11 @@ sonarr:
     include:
       # Comment out any of the following includes to disable them
       - template: sonarr-quality-definition-series
-      - template: sonarr-v4-quality-profile-web-2160p
+      # - template: sonarr-v4-quality-profile-web-2160p
+      - template: sonarr-v4-quality-profile-web-2160p-alternative
       - template: sonarr-v4-custom-formats-web-2160p
-      - template: sonarr-v4-quality-profile-web-1080p
+      # - template: sonarr-v4-quality-profile-web-1080p
+      - template: sonarr-v4-quality-profile-web-1080p-alternative
       - template: sonarr-v4-custom-formats-web-1080p
     custom_formats:
       # =================================
@@ -65,7 +67,6 @@ sonarr:
         assign_scores_to:
           - name: WEB-2160p
 
-
       # =================================
       # WEB-1080p
       # =================================
@@ -88,4 +89,52 @@ sonarr:
       - trash_ids:
           - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         assign_scores_to:
+          - name: WEB-1080p
+
+
+      # =================================
+      # SHARED
+      # =================================
+      - trash_ids:
+          - 0542a48746585dc4444bbbb8a6bdf6ea # Language: Original + French
+        assign_scores_to:
+          - name: WEB-2160p
+            score: 500
+          - name: WEB-1080p
+            score: 500
+      - trash_ids:
+          - d6e9318c875905d6cfb5bee961afcea9 # Language: Not Original
+        assign_scores_to:
+          - name: WEB-2160p
+            score: -10000
+          - name: WEB-1080p
+            score: 500
+      - trash_ids:
+          - 533f782474f0819643c2ec0c1eeeb0ac # Language: Not French
+        assign_scores_to:
+          - name: WEB-2160p
+            score: 0
+          - name: WEB-1080p
+            score: 500
+      - trash_ids:
+          - 9172b2f683f6223e3a1846427b417a3d # VOSTFR
+        assign_scores_to:
+          - name: WEB-2160p
+            score: 0
+          - name: WEB-1080p
+            score: 500
+
+      - trash_ids:
+          # ===== HQ Release Groups =====
+          - 5322da05b19d857acc1e75be3edf47b3 # FR HD Bluray Tier 01
+          - 57f34251344be2e283fc30e00e458be6 # FR HD Bluray Tier 02
+          - 9790a618cec1aeac8ce75601a17ea40d # FR WEB Tier 01
+          - 3c83a765f84239716bd5fd2d7af188f9 # FR WEB Tier 02
+          - dbfc0a4b5cb4cbd693311c4482ae9683 # FR WEB Tier 03
+          - 0d94489c0d5828cd3bf9409d309fb32b # FR Scene Groups
+          - c20f169ef63c5f40c2def54abaf4438e # WEB Tier 01
+          - 403816d65392c79236dcb6dd591aeda4 # WEB Tier 02
+          - af94e0fe497124d1f9ce732069ec8c3b # WEB Tier 03
+        assign_scores_to:
+          - name: WEB-2160p
           - name: WEB-1080p
