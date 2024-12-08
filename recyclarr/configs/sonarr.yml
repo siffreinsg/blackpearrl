@@ -1,4 +1,17 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/recyclarr/recyclarr/master/schemas/config-schema.json
+###################################################################################################
+# Recyclarr Configuration Template: FR-BLURAY-WEB-1080p (V4)                                      #
+# Updated: 2024-12-03                                                                             #
+# Documentation: https://recyclarr.dev                                                            #
+# Note: The following will be in French but hold basically the same info as the other template    #
+# ----------------------------------------------------------------------------------------------- #
+# Si vous utilisez plusieurs profiles dans une seule instance merci de vous référez               #
+# à la documentation suivante (en anglais) pour les combiner :                                    #
+# https://recyclarr.dev/wiki/yaml/config-examples/#merge-single-instance                          #
+# Cette config est valable seulement pour la version 4 de Sonarr                                  #
+###################################################################################################
+
+# Definition d'une instance : https://recyclarr.dev/wiki/yaml/config-reference/basic/
 sonarr:
   sonarr:
     delete_old_custom_formats: true
@@ -13,128 +26,302 @@ sonarr:
         anime: default
 
     include:
-      # Comment out any of the following includes to disable them
       - template: sonarr-quality-definition-series
-      # - template: sonarr-v4-quality-profile-web-2160p
-      - template: sonarr-v4-quality-profile-web-2160p-alternative
-      - template: sonarr-v4-custom-formats-web-2160p
-      # - template: sonarr-v4-quality-profile-web-1080p
-      - template: sonarr-v4-quality-profile-web-1080p-alternative
-      - template: sonarr-v4-custom-formats-web-1080p
+      # Profile souhaité - veuillez à avoir les lignes correspondantes activées
+      # --- Profile VOSTFR ---
+      # - template: sonarr-v4-quality-profile-bluray-web-1080p-french-vostfr
+      # - template: sonarr-v4-custom-formats-bluray-web-1080p-french-vostfr
+      # --- Profile MULTi.VF ---
+      # - template: sonarr-v4-quality-profile-bluray-web-1080p-french-multi-vf
+      # - template: sonarr-v4-custom-formats-bluray-web-1080p-french-multi-vf
+      # --- Profile MULTi.VO ---
+      - template: sonarr-v4-quality-profile-bluray-web-1080p-french-multi-vo
+      - template: sonarr-v4-custom-formats-bluray-web-1080p-french-multi-vo
+
+      # --- Profile VOSTFR ---
+      # - template: sonarr-v4-quality-profile-bluray-web-2160p-french-vostfr
+      # - template: sonarr-v4-custom-formats-bluray-web-2160p-french-vostfr
+      # --- Profile MULTi.VF ---
+      # - template: sonarr-v4-quality-profile-bluray-web-2160p-french-multi-vf
+      # - template: sonarr-v4-custom-formats-bluray-web-2160p-french-multi-vf
+      # --- Profile MULTi.VO ---
+      - template: sonarr-v4-quality-profile-bluray-web-2160p-french-multi-vo
+      - template: sonarr-v4-custom-formats-bluray-web-2160p-french-multi-vo
+
+    # Formats Personnalisés (Custom Formats) :
+    # https://recyclarr.dev/wiki/yaml/config-reference/custom-formats/
     custom_formats:
+      # =================================
+      # WEB-1080p
+      # =================================
+      # Optionnels
+      # Ils sont optionnels et peuvent ne pas fonctionner correctement avec les profiles FR
+      # - trash_ids:
+          # - 32b367365729d530ca1c124a0b180c64 # Bad Dual Groups
+          # - 82d40da2bc6923f41e14394075dd4b03 # No-RlsGroup
+          # - e1a997ddb54e3ecbfe06341ad323c458 # Obfuscated
+          # - 06d66ab109d4d2eddb2794d21526d140 # Retags
+          # - 1b3994c551cbb92a2c781af061f4ab44 # Scene
+        # assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+          # - name: FR-MULTi-VF-WEB-1080p
+          # - name: FR-MULTi-VO-WEB-1080p
+
+      # Décommentez les lignes suivantes pour accepter les releases en x265 HD avec du HDR/DV
+      - trash_ids:
+          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+          #   score: 0
+          # - name: FR-MULTi-VF-WEB-1080p
+          #   score: 0
+          - name: FR-MULTi-VO-WEB-1080p
+            score: 0
+      - trash_ids:
+          - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+          # - name: FR-MULTi-VF-WEB-1080p
+          - name: FR-MULTi-VO-WEB-1080p
+
+      # Décommenter le score associé si vous ne voulez pas de FanSUB.
+      - trash_ids:
+          - 84f0acbda9c0c9de783894fb66df25aa  # FanSUB
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: -10000
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: -10000
+          # - name: FR-MULTi-VO-WEB-1080p
+            # score: -10000
+
+      # ===== Versions françaises =====
+      # Activez ou désactiver les Formats Personnalisés suivant si vous souhaitez noter vos releases
+      # avec. Vous pouvez aussi leur attribuer un score en fonction de si vous souhaitez préférer un
+      # certain type d'audio français.
+      # Par exemple si vous préférez la VFF : VFF + VF2 à 101, VFQ à -101, le reste à 0.
+      # Pensez à vérifier aussi à quoi corresponde les différents types de version francophones :
+      # https://trash-guides.info/Sadarr/sadarr-setup-quality-profiles-french-fr/#french-audio-versions
+      - trash_ids:
+          - 2c29a39a4fdfd6d258799bc4c09731b9 # VFF
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: 101
+      - trash_ids:
+          - 7ae924ee9b2f39df3283c6c0beb8a2aa # VOF
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: 101
+      - trash_ids:
+          - b6816a0e1d4b64bf3550ad3b74b009b6 # VFI
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: 0
+      - trash_ids:
+          - 34789ec3caa819f087e23bbf9999daf7 # VF2
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: 0
+      - trash_ids:
+          - 7a7f4e4f58bd1058440236d033a90b67 # VFQ
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: -101
+      - trash_ids:
+          - 802dd70b856c423a9b0cb7f34ac42be1 # VOQ
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: 0
+      - trash_ids:
+          - 82085412d9a53ba8d8e46fc624eb701d # VQ
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: -101
+      - trash_ids:
+          - 0ce1e39a4676c6692ce47935278dac76 # VFB
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-1080p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-1080p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-1080p
+            score: -101
+
+
       # =================================
       # WEB-2160p
       # =================================
       # HDR Formats
       - trash_ids:
-          # Comment out the next line if you and all of your users' setups are fully DV compatible
-          # - 9b27ab6498ec0f31a3353992e19434ca # DV (WEBDL)
-
-          # HDR10+ Boost - Uncomment the next two lines if any of your devices DO support HDR10+
+          # Commentez la ligne suivante si vous et tous vos utilisateurs
+          # avez des configurations entièrement compatibles DV
+          - 9b27ab6498ec0f31a3353992e19434ca # DV (WEBDL)
+          # HDR10+ Boost
+          # Décommentez les deux lignes suivantes si l'un de vos appareils prend en charge le HDR10+
           - 0dad0a507451acddd754fe6dc3a7f5e7 # HDR10+ Boost
           - 385e9e8581d33133c3961bdcdeffb7b4 # DV HDR10+ Boost
         assign_scores_to:
-          - name: WEB-2160p
+          # - name: FR-VOSTFR-WEB-2160p
+          # - name: FR-MULTi-VF-WEB-2160p
+          - name: FR-MULTi-VO-WEB-2160p
 
-      # Optional
-      - trash_ids:
-          # - 32b367365729d530ca1c124a0b180c64 # Bad Dual Groups
-          # - 82d40da2bc6923f41e14394075dd4b03 # No-RlsGroup
-          # - e1a997ddb54e3ecbfe06341ad323c458 # Obfuscated
-          # - 06d66ab109d4d2eddb2794d21526d140 # Retags
-          # - 1b3994c551cbb92a2c781af061f4ab44 # Scene
-        assign_scores_to:
-          - name: WEB-2160p
-
-      - trash_ids:
-          # Uncomment the next six lines to allow x265 HD releases with HDR/DV
-          - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
-        assign_scores_to:
-          - name: WEB-2160p
-            score: 0
-      - trash_ids:
-          - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
-        assign_scores_to:
-          - name: WEB-2160p
-
-      # Optional SDR
-      # Only ever use ONE of the following custom formats:
-      # SDR - block ALL SDR releases
-      # SDR (no WEBDL) - block UHD/4k Remux and Bluray encode SDR releases, but allow SDR WEB
+      # SDR Optionnel
+      # N'utilisez qu'UN SEUL des Formats Personnalisés suivants :
+      # SDR - bloque TOUTES les versions SDR
+      # SDR (no WEBDL) - autorise seulement les SDR WEB
       - trash_ids:
           # - 2016d1676f5ee13a5b7257ff86ac9a93 # SDR
           - 83304f261cf516bb208c18c54c0adf97 # SDR (no WEBDL)
         assign_scores_to:
-          - name: WEB-2160p
+          # - name: FR-VOSTFR-WEB-2160p
+          # - name: FR-MULTi-VF-WEB-2160p
+          - name: FR-MULTi-VO-WEB-2160p
 
-      # =================================
-      # WEB-1080p
-      # =================================
-      # Optional
-      - trash_ids:
+      # Optionnels
+      # Ils sont optionnels et peuvent ne pas fonctionner correctement avec les profiles FR
+      # - trash_ids:
           # - 32b367365729d530ca1c124a0b180c64 # Bad Dual Groups
           # - 82d40da2bc6923f41e14394075dd4b03 # No-RlsGroup
           # - e1a997ddb54e3ecbfe06341ad323c458 # Obfuscated
           # - 06d66ab109d4d2eddb2794d21526d140 # Retags
           # - 1b3994c551cbb92a2c781af061f4ab44 # Scene
-        assign_scores_to:
-          - name: WEB-1080p
+        # assign_scores_to:
+          # - name: FR-VOSTFR-WEB-2160p
+          # - name: FR-MULTi-VF-WEB-2160p
+          # - name: FR-MULTi-VO-WEB-2160p
 
+      # Décommentez les lignes suivantes pour accepter les releases en x265 HD avec du HDR/DV
       - trash_ids:
-          # Uncomment the next six lines to allow x265 HD releases with HDR/DV
           - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
         assign_scores_to:
-          - name: WEB-1080p
+          # - name: FR-VOSTFR-WEB-2160p
+          #   score: 0
+          # - name: FR-MULTi-VF-WEB-2160p
+          #   score: 0
+          - name: FR-MULTi-VO-WEB-2160p
             score: 0
       - trash_ids:
           - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         assign_scores_to:
-          - name: WEB-1080p
+          # - name: FR-VOSTFR-WEB-2160p
+          # - name: FR-MULTi-VF-WEB-2160p
+          - name: FR-MULTi-VO-WEB-2160p
 
+      # Décommenter le score associé si vous ne voulez pas de FanSUB.
+      - trash_ids:
+          - 84f0acbda9c0c9de783894fb66df25aa  # FanSUB
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: -10000
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: -10000
+          # - name: FR-MULTi-VO-WEB-2160p
+            # score: -10000
 
-      # =================================
-      # SHARED
-      # =================================
+      # ===== Versions françaises =====
+      # Activez ou désactiver les Formats Personnalisés suivant si vous souhaitez noter vos releases
+      # avec. Vous pouvez aussi leur attribuer un score en fonction de si vous souhaitez préférer un
+      # certain type d'audio français.
+      # Par exemple si vous préférez la VFF : VFF + VF2 à 101, VFQ à -101, le reste à 0.
+      # Pensez à vérifier aussi à quoi corresponde les différents types de version francophones :
+      # https://trash-guides.info/Sadarr/sadarr-setup-quality-profiles-french-fr/#french-audio-versions
       - trash_ids:
-          - 0542a48746585dc4444bbbb8a6bdf6ea # Language: Original + French
+          - 2c29a39a4fdfd6d258799bc4c09731b9 # VFF
         assign_scores_to:
-          - name: WEB-2160p
-            score: 500
-          - name: WEB-1080p
-            score: 500
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
+            score: 101
       - trash_ids:
-          - d6e9318c875905d6cfb5bee961afcea9 # Language: Not Original
+          - 7ae924ee9b2f39df3283c6c0beb8a2aa # VOF
         assign_scores_to:
-          - name: WEB-2160p
-            score: -10000
-          - name: WEB-1080p
-            score: 500
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
+            score: 101
       - trash_ids:
-          - 533f782474f0819643c2ec0c1eeeb0ac # Language: Not French
+          - b6816a0e1d4b64bf3550ad3b74b009b6 # VFI
         assign_scores_to:
-          - name: WEB-2160p
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
             score: 0
-          - name: WEB-1080p
-            score: 500
       - trash_ids:
-          - 9172b2f683f6223e3a1846427b417a3d # VOSTFR
+          - 34789ec3caa819f087e23bbf9999daf7 # VF2
         assign_scores_to:
-          - name: WEB-2160p
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
             score: 0
-          - name: WEB-1080p
-            score: 500
-
       - trash_ids:
-          # ===== HQ Release Groups =====
-          - 5322da05b19d857acc1e75be3edf47b3 # FR HD Bluray Tier 01
-          - 57f34251344be2e283fc30e00e458be6 # FR HD Bluray Tier 02
-          - 9790a618cec1aeac8ce75601a17ea40d # FR WEB Tier 01
-          - 3c83a765f84239716bd5fd2d7af188f9 # FR WEB Tier 02
-          - dbfc0a4b5cb4cbd693311c4482ae9683 # FR WEB Tier 03
-          - 0d94489c0d5828cd3bf9409d309fb32b # FR Scene Groups
-          - c20f169ef63c5f40c2def54abaf4438e # WEB Tier 01
-          - 403816d65392c79236dcb6dd591aeda4 # WEB Tier 02
-          - af94e0fe497124d1f9ce732069ec8c3b # WEB Tier 03
+          - 7a7f4e4f58bd1058440236d033a90b67 # VFQ
         assign_scores_to:
-          - name: WEB-2160p
-          - name: WEB-1080p
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
+            score: -101
+      - trash_ids:
+          - 802dd70b856c423a9b0cb7f34ac42be1 # VOQ
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
+            score: 0
+      - trash_ids:
+          - 82085412d9a53ba8d8e46fc624eb701d # VQ
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
+            score: -101
+      - trash_ids:
+          - 0ce1e39a4676c6692ce47935278dac76 # VFB
+        assign_scores_to:
+          # - name: FR-VOSTFR-WEB-2160p
+            # score: 101
+          # - name: FR-MULTi-VF-WEB-2160p
+            # score: 101
+          - name: FR-MULTi-VO-WEB-2160p
+            score: -101
