@@ -24,3 +24,6 @@ url = https://github.com/Kometa-Team/Kometa
 path = VueTorrent/vuetorrent-backend
 shallow = true
 url = https://github.com/VueTorrent/vuetorrent-backend.git
+[submodule "JBOPS"]
+	path = JBOPS
+	url = git@github.com:blacktwin/JBOPS.git
