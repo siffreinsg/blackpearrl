@@ -1,6 +1,6 @@
 [Unit]
 Description=Quotas Notifier
-Wants=quotas_usage.timer
+Wants=quotas_notifier.timer
 OnFailure=notify_onFailure@%i.service
 
 [Service]

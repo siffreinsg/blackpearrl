@@ -19,8 +19,8 @@ cd ~/.config/systemd/user
 ln -s ~/blackpearrl/scripts/quotas_notifier/quotas_notifier.service
 ln -s ~/blackpearrl/scripts/quotas_notifier/quotas_notifier.timer
 systemctl --user daemon-reload
-systemctl --user enable quotas_notifier.service
-systemctl --user enable quotas_notifier.timer
+systemctl --user enable quotas_notifier.service --now
+systemctl --user enable quotas_notifier.timer --now
 ```
 
 Edit the `OnCalendar` field in the timer file to set the desired interval or time of day.
