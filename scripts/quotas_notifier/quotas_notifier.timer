@@ -1,0 +1,11 @@
+[Unit]
+Description=Quotas Notifier Timer
+Requires=quotas_notifier.service
+
+[Timer]
+Unit=quotas_notifier.service
+Persistent=true
+OnCalendar=*-*-* 03:20:00
+
+[Install]
+WantedBy=timers.target
