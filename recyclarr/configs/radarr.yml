@@ -22,7 +22,7 @@ radarr:
         standard: default
 
     include:
-      - template: radarr-quality-definition-movie
+      # - template: radarr-quality-definition-movie
       # Profile souhaité - veuillez à avoir les lignes correspondantes activées
       # --- Profile VOSTFR ---
       # - template: sonarr-v4-quality-profile-hd-bluray-web-french-vostfr

@@ -11,7 +11,7 @@ radarr:
 
     include:
       # Comment out any of the following includes to disable them
-      - template: radarr-quality-definition-sqp-uhd
+      # - template: radarr-quality-definition-sqp-uhd
       - template: radarr-quality-profile-sqp-5
       - template: radarr-custom-formats-sqp-5
 

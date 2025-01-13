@@ -26,7 +26,7 @@ sonarr:
         anime: default
 
     include:
-      - template: sonarr-quality-definition-anime
+      # - template: sonarr-quality-definition-anime
       # Profile souhaité - veuillez à avoir les lignes correspondantes activées
       # --- Profile VOSTFR ---
       - template: sonarr-v4-quality-profile-1080p-french-anime-vostfr

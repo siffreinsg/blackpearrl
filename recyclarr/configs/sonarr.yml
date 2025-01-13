@@ -26,7 +26,7 @@ sonarr:
         anime: default
 
     include:
-      - template: sonarr-quality-definition-series
+      # - template: sonarr-quality-definition-series
       # Profile souhaité - veuillez à avoir les lignes correspondantes activées
       # --- Profile VOSTFR ---
       # - template: sonarr-v4-quality-profile-bluray-web-1080p-french-vostfr
