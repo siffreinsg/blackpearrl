@@ -16,3 +16,6 @@ ln -s ~/blackpearrl/VueTorrent/vuetorrent-backend.service
 systemctl --user daemon-reload
 systemctl --user enable --now vuetorrent-backend
 ```
+
+
+On Ultra, node is installed using nvm. Follow this doc : https://docs.ultra.cc/books/unofficial-language-installers-3AK/page/install-nodejs

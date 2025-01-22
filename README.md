@@ -17,7 +17,8 @@ Clone the repo in the home directory with the following command:
 
 ```bash
 cd $HOME
-git clone --recurse-submodules https://github.com/siffreinsg/blackpearrl
+git clone https://github.com/siffreinsg/blackpearrl
+git submodule update --init --recursive --filter=tree:0 --single-branch
 ```
 
 ## Pipenv
