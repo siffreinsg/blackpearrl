@@ -15,11 +15,6 @@ url = https://github.com/VueTorrent/VueTorrent.git
 shallow = true
 branch = latest-release
 
-[submodule "Kometa/Kometa"]
-path = Kometa/Kometa
-shallow = true
-url = https://github.com/Kometa-Team/Kometa
-
 [submodule "VueTorrent/vuetorrent-backend"]
 path = VueTorrent/vuetorrent-backend
 shallow = true
