@@ -1,4 +1,4 @@
-# blackpearrl
+# Blackpearrl
 Collection of scripts and configs for my Ultra.cc seedbox
 
 Tools from the community are included in this repo as git submodules. For each tool, I have included my own configuration files and scripts. This repo is intended to be a one-stop shop for all the tools I use on my seedbox.
@@ -12,12 +12,13 @@ All scripts and systemd configs are intended to be used on an Ultra.cc seedbox. 
 
 ## Clone the repo
 
-ALl scripts and configs are intended to be used from the `$HOME/blackpearrl` directory and rely on submodules. You will have to update scripts and systemd service files if you clone the repo to a different directory.
+All scripts and configs are intended to be used from the `$HOME/blackpearrl` directory and rely on submodules. You will have to update scripts and systemd service files if you clone the repo to a different directory.
 Clone the repo in the home directory with the following command:
 
 ```bash
 cd $HOME
 git clone https://github.com/siffreinsg/blackpearrl
+cd blackpearrl
 git submodule update --init --recursive --filter=tree:0 --single-branch
 ```
 
