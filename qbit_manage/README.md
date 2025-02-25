@@ -13,12 +13,7 @@ pipenv install -r qbit_manage/requirements.txt
 ## Configuration
 
 Edit the `config.yaml` file in the `~/blackpearrl/qbit_manage` directory.
-No environment variables are required for this tool.
-
-Update the host and port for qBittorrent Web UI.
-
-To authenticate with qBittorrent, you will need to add your username and password to the `config.yaml` file.
-Alternatively, you may configure qBittorrent Web UI to bypass authentication for the IP address the script is running from.
+Set the `QBT_HOST` environment variable to the IP address or host of the machine running qBittorrent. Set `QBT_USER` and `QBT_PASS` if you are using authentication. Alternatively, you may configure qBittorrent Web UI to bypass authentication for the IP address the script is running from.
 
 ## Systemd service
 
