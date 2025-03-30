@@ -32,8 +32,8 @@ sonarr:
       # - template: sonarr-v4-quality-profile-bluray-web-1080p-french-vostfr
       # - template: sonarr-v4-custom-formats-bluray-web-1080p-french-vostfr
       # --- Profile MULTi.VF ---
-      # - template: sonarr-v4-quality-profile-bluray-web-1080p-french-multi-vf
-      # - template: sonarr-v4-custom-formats-bluray-web-1080p-french-multi-vf
+      - template: sonarr-v4-quality-profile-bluray-web-1080p-french-multi-vf
+      - template: sonarr-v4-custom-formats-bluray-web-1080p-french-multi-vf
       # --- Profile MULTi.VO ---
       - template: sonarr-v4-quality-profile-bluray-web-1080p-french-multi-vo
       - template: sonarr-v4-custom-formats-bluray-web-1080p-french-multi-vo
@@ -42,8 +42,8 @@ sonarr:
       # - template: sonarr-v4-quality-profile-bluray-web-2160p-french-vostfr
       # - template: sonarr-v4-custom-formats-bluray-web-2160p-french-vostfr
       # --- Profile MULTi.VF ---
-      # - template: sonarr-v4-quality-profile-bluray-web-2160p-french-multi-vf
-      # - template: sonarr-v4-custom-formats-bluray-web-2160p-french-multi-vf
+      - template: sonarr-v4-quality-profile-bluray-web-2160p-french-multi-vf
+      - template: sonarr-v4-custom-formats-bluray-web-2160p-french-multi-vf
       # --- Profile MULTi.VO ---
       - template: sonarr-v4-quality-profile-bluray-web-2160p-french-multi-vo
       - template: sonarr-v4-custom-formats-bluray-web-2160p-french-multi-vo
@@ -73,15 +73,15 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
           #   score: 0
-          # - name: FR-MULTi-VF-WEB-1080p
-          #   score: 0
+          - name: FR-MULTi-VF-WEB-1080p
+            score: 0
           - name: FR-MULTi-VO-WEB-1080p
             score: 0
       - trash_ids:
           - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
-          # - name: FR-MULTi-VF-WEB-1080p
+          - name: FR-MULTi-VF-WEB-1080p
           - name: FR-MULTi-VO-WEB-1080p
 
       # Décommenter le score associé si vous ne voulez pas de FanSUB.
@@ -107,8 +107,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: 101
           - name: FR-MULTi-VO-WEB-1080p
             score: 101
       - trash_ids:
@@ -116,8 +116,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: 101
           - name: FR-MULTi-VO-WEB-1080p
             score: 101
       - trash_ids:
@@ -125,8 +125,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: 0
           - name: FR-MULTi-VO-WEB-1080p
             score: 0
       - trash_ids:
@@ -134,17 +134,17 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: 101
           - name: FR-MULTi-VO-WEB-1080p
-            score: 0
+            score: 101
       - trash_ids:
           - 7a7f4e4f58bd1058440236d033a90b67 # VFQ
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: -101
           - name: FR-MULTi-VO-WEB-1080p
             score: -101
       - trash_ids:
@@ -152,8 +152,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: 0
           - name: FR-MULTi-VO-WEB-1080p
             score: 0
       - trash_ids:
@@ -161,8 +161,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: -101
           - name: FR-MULTi-VO-WEB-1080p
             score: -101
       - trash_ids:
@@ -170,8 +170,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-1080p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-1080p
+            score: -101
           - name: FR-MULTi-VO-WEB-1080p
             score: -101
 
@@ -190,7 +190,7 @@ sonarr:
           - 385e9e8581d33133c3961bdcdeffb7b4 # DV HDR10+ Boost
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
-          # - name: FR-MULTi-VF-WEB-2160p
+          - name: FR-MULTi-VF-WEB-2160p
           - name: FR-MULTi-VO-WEB-2160p
 
       # SDR Optionnel
@@ -202,7 +202,7 @@ sonarr:
           - 83304f261cf516bb208c18c54c0adf97 # SDR (no WEBDL)
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
-          # - name: FR-MULTi-VF-WEB-2160p
+          - name: FR-MULTi-VF-WEB-2160p
           - name: FR-MULTi-VO-WEB-2160p
 
       # Optionnels
@@ -224,15 +224,15 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
           #   score: 0
-          # - name: FR-MULTi-VF-WEB-2160p
-          #   score: 0
+          - name: FR-MULTi-VF-WEB-2160p
+            score: 0
           - name: FR-MULTi-VO-WEB-2160p
             score: 0
       - trash_ids:
           - 9b64dff695c2115facf1b6ea59c9bd07 # x265 (no HDR/DV)
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
-          # - name: FR-MULTi-VF-WEB-2160p
+          - name: FR-MULTi-VF-WEB-2160p
           - name: FR-MULTi-VO-WEB-2160p
 
       # Décommenter le score associé si vous ne voulez pas de FanSUB.
@@ -258,8 +258,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: 101
           - name: FR-MULTi-VO-WEB-2160p
             score: 101
       - trash_ids:
@@ -267,8 +267,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: 101
           - name: FR-MULTi-VO-WEB-2160p
             score: 101
       - trash_ids:
@@ -276,8 +276,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: 0
           - name: FR-MULTi-VO-WEB-2160p
             score: 0
       - trash_ids:
@@ -285,17 +285,17 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: 101
           - name: FR-MULTi-VO-WEB-2160p
-            score: 0
+            score: 101
       - trash_ids:
           - 7a7f4e4f58bd1058440236d033a90b67 # VFQ
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: -101
           - name: FR-MULTi-VO-WEB-2160p
             score: -101
       - trash_ids:
@@ -303,8 +303,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: 0
           - name: FR-MULTi-VO-WEB-2160p
             score: 0
       - trash_ids:
@@ -312,8 +312,8 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: -101
           - name: FR-MULTi-VO-WEB-2160p
             score: -101
       - trash_ids:
@@ -321,7 +321,7 @@ sonarr:
         assign_scores_to:
           # - name: FR-VOSTFR-WEB-2160p
             # score: 101
-          # - name: FR-MULTi-VF-WEB-2160p
-            # score: 101
+          - name: FR-MULTi-VF-WEB-2160p
+            score: -101
           - name: FR-MULTi-VO-WEB-2160p
             score: -101
