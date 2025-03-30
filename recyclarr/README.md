@@ -16,6 +16,7 @@ recyclarr config list local # Initialize the local config directory
 cd ~/.apps/recyclarr
 rm -rf configs # Remove the existing configs directory
 ln -s ~/blackpearrl/recyclarr/configs configs # Link the repository configs directory
+ln -s ~/blackpearrl/recyclarr/secrets.yml secrets.yml # Link the repository secrets.yml file
 ```
 
 Create a `secrets.yml` file in the `~/.apps/recyclarr` directory with the following content:
