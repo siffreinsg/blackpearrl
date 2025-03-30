@@ -28,8 +28,8 @@ radarr:
       # - template: redarr-v4-quality-profile-hd-bluray-web-french-vostfr
       # - template: radarr-v4-custom-formats-hd-bluray-web-french-vostfr
       # --- Profile MULTi.VF ---
-      - template: radarr-v4-quality-profile-hd-bluray-web-french-multi-vf
-      - template: radarr-v4-custom-formats-hd-bluray-web-french-multi-vf
+      - template: radarr-quality-profile-hd-bluray-web-french-multi-vf
+      - template: radarr-custom-formats-hd-bluray-web-french-multi-vf
       # --- Profile MULTi.VO ---
       - template: radarr-quality-profile-hd-bluray-web-french-multi-vo
       - template: radarr-custom-formats-hd-bluray-web-french-multi-vo
