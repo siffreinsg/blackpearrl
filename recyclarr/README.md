@@ -12,6 +12,7 @@ Using the Ultra.cc installer, recyclarr configuration is located at `~/.apps/rec
 Assuming this repository is cloned to `~/blackpearrl`, the configuration can be linked to the repository with the following command:
 
 ```bash
+recyclarr config list local # Initialize the local config directory
 cd ~/.apps/recyclarr
 rm -rf configs # Remove the existing configs directory
 ln -s ~/blackpearrl/recyclarr/configs configs # Link the repository configs directory
