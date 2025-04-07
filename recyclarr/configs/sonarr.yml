@@ -126,9 +126,9 @@ sonarr:
           # - name: FR-VOSTFR-WEB-1080p
             # score: 101
           - name: FR-MULTi-VF-WEB-1080p
-            score: 0
+            score: 100
           - name: FR-MULTi-VO-WEB-1080p
-            score: 0
+            score: 100
       - trash_ids:
           - 34789ec3caa819f087e23bbf9999daf7 # VF2
         assign_scores_to:

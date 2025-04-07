@@ -126,9 +126,9 @@ radarr:
           # - name: FR-VOSTFR-HD
             # score: 101
           - name: FR-MULTi-VF-HD
-            score: 0
+            score: 100
           - name: FR-MULTi-VO-HD
-            score: 0
+            score: 100
       - trash_ids:
           - 29b5f7b1a5f20f64228786c3ab1bdc7d # VF2
         assign_scores_to:
@@ -153,9 +153,9 @@ radarr:
           # - name: FR-VOSTFR-HD
             # score: 101
           - name: FR-MULTi-VF-HD
-            score: -101
+            score: 0
           - name: FR-MULTi-VO-HD
-            score: -101
+            score: 0
       - trash_ids:
           - 95aa50f71a01c82354a7a2b385f1c4d8 # VQ
         assign_scores_to:
