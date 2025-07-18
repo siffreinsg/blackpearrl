@@ -107,6 +107,15 @@ share_limits:
     include_all_tags:
       - noHL
       - private
+    categories:
+      - radarr-completed
+      - radarr-sqp-completed
+      - sonarr-completed
+      - sonarr2-completed
+      - radarr
+      - radarr-sqp
+      - sonarr
+      - sonarr2
     max_ratio: 1
     max_seeding_time: 10080 # 7 days
     cleanup: true
@@ -116,6 +125,15 @@ share_limits:
     include_all_tags:
       - noHL
       - public
+    categories:
+      - radarr-completed
+      - radarr-sqp-completed
+      - sonarr-completed
+      - sonarr2-completed
+      - radarr
+      - radarr-sqp
+      - sonarr
+      - sonarr2
     max_ratio: 0
     max_seeding_time: 0
     cleanup: true
@@ -155,7 +173,7 @@ share_limits:
     max_ratio: 0
     max_seeding_time: 0
     limit_upload_speed: 0
-    cleanup: true
+    cleanup: false
   # =====================
   # Manual torrents
   # =====================
