@@ -3,11 +3,12 @@
 Make sure to install the requirements.
 
 ## Installation
+
 ### Using pipenv
 
 ```bash
 cd ~/blackpearrl/qbit_manage
-pipenv install -r qbit_manage/requirements.txt
+pipenv install .
 ```
 
 ## Configuration
