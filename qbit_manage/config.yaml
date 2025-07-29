@@ -68,7 +68,7 @@ cat:
 cat_change:
 
 tracker:
-  joinpeers|loadpeers|drago-server|drago-tracker|maxp2p:
+  joinpeers|loadpeers|drago-server|drago-tracker|maxp2p|p2p-world:
     tag:
       - private
       - yggtorrent
