@@ -4,8 +4,10 @@ Requires=qbit_manage.service
 
 [Timer]
 Unit=qbit_manage.service
+OnCalendar=hourly
+RandomizedDelaySec=50min
+AccuracySec=30min
 Persistent=true
-OnCalendar=*-*-* 03:05:00
 
 [Install]
 WantedBy=timers.target
