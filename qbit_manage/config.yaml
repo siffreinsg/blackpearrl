@@ -1,5 +1,5 @@
 commands:
-  dry_run: False
+  dry_run: !ENV QBM_DRY_RUN
   recheck: False
   cat_update: False
   tag_update: True
