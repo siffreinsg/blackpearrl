@@ -1,9 +1,9 @@
 commands:
   dry_run: false
   recheck: false
-  cat_update: false
+  cat_update: true
   tag_update: true
-  rem_unregistered: false # Plan to change to true in the future
+  rem_unregistered: false
   tag_tracker_error: true
   rem_orphaned: true
   tag_nohardlinks: true
@@ -17,8 +17,8 @@ qbt:
   pass: !ENV QBT_PASS
 
 settings:
-  force_auto_tmm: false # Will force qBittorrent to enable Automatic Torrent Management for each torrent.
-  force_auto_tmm_ignore_tags: [] #Torrents with these tags will be ignored when force_auto_tmm is enabled.
+  force_auto_tmm: true # Will force qBittorrent to enable Automatic Torrent Management for each torrent.
+  force_auto_tmm_ignore_tags: [manual] # Torrents with these tags will be ignored when force_auto_tmm is enabled.
   tracker_error_tag: tracker_issue # Will set the tag of any torrents that do not have a working tracker.
   nohardlinks_tag: no_hardlinks # Will set the tag of any torrents with no hardlinks.
   stalled_tag: stalled # Will set the tag of any torrents stalled downloading.
@@ -26,7 +26,7 @@ settings:
   share_limits_min_seeding_time_tag: MinSeedTimeNotReached # Tag to be added to torrents that have not yet reached the minimum seeding time
   share_limits_min_num_seeds_tag: MinSeedsNotMet # Tag to be added to torrents that have not yet reached the minimum number of seeds
   share_limits_last_active_tag: LastActiveLimitNotReached # Tag to be added to torrents that have not yet reached the last active limit
-  cat_filter_completed: true # Filters for completed torrents only when running cat_update command
+  cat_filter_completed: false # Filters for completed torrents only when running cat_update command
   share_limits_filter_completed: false # Filters for completed torrents only when running share_limits command
   tag_nohardlinks_filter_completed: true # Filters for completed torrents only when running tag_nohardlinks command
   rem_unregistered_filter_completed: false # Filters for completed torrents only when running rem_unregistered command
@@ -68,6 +68,9 @@ tracker:
   torrentleech|tleechreload:
     tag: [private, torrentleech]
   # Public trackers
+  nyaa:
+    tag: [public, nyaa.si]
+  # Default: catch-all for public trackers
   other:
     tag: [public]
 
