@@ -2,6 +2,7 @@
 Description=qBit Manage
 After=network.target
 OnFailure=notify_onFailure@%i.service
+Conflicts=qbit_manage.service
 
 [Service]
 Type=oneshot
