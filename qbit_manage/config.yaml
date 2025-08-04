@@ -56,7 +56,7 @@ cat:
 
 tracker:
   # Private trackers
-  maxp2p|p2p-world:
+  maxp2p|p2p-world|drago-tracker:
     tag: [private, ygg]
   sharewood.tv:
     tag: [private, sharewood.tv]
