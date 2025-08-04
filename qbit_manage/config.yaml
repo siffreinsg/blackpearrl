@@ -12,9 +12,9 @@ commands:
   skip_cleanup: False
 
 qbt:
-  host: !ENV QBIT_HOST
-  user: !ENV QBIT_USER
-  pass: !ENV QBIT_PASS
+  host: !ENV QBT_HOST
+  user: !ENV QBT_USER
+  pass: !ENV QBT_PASS
 
 settings:
   force_auto_tmm: False # Will force qBittorrent to enable Automatic Torrent Management for each torrent.
@@ -137,6 +137,7 @@ orphaned:
     - "**/*.!qB"
     - "**/*_unpackerred"
   max_orphaned_files_to_delete: 10
+  min_file_age_minutes: 0
 
 webhooks:
   error: !ENV QBM_WEBHOOK_ERROR
