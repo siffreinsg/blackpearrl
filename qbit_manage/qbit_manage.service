@@ -5,9 +5,7 @@ OnFailure=notify_onFailure@%i.service
 
 [Service]
 Type=oneshot
-WorkingDirectory=%h/blackpearrl/qbit_manage
+WorkingDirectory=%h/.config/qbit_manage
 EnvironmentFile=%h/blackpearrl/.env
-ExecStart=%h/.local/bin/pipenv run python3 qbit_manage/qbit_manage.py --config-file="config.yaml" --run
-
-[Install]
-WantedBy=multi-user.target
+ExecStart=%h/.pyenv/versions/3.11.4/bin/python3 %h/.config/qbit_manage/qbit_manage.py --run
+ExecStop=
