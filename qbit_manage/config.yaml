@@ -1,4 +1,5 @@
 commands:
+  dry_run: False
   recheck: False
   cat_update: False
   tag_update: True
