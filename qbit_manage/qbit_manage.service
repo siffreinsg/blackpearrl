@@ -8,4 +8,3 @@ Type=oneshot
 WorkingDirectory=%h/.config/qbit_manage
 EnvironmentFile=%h/blackpearrl/.env
 ExecStart=%h/.pyenv/versions/3.11.4/bin/python3 %h/.config/qbit_manage/qbit_manage.py --run
-ExecStop=
