@@ -1,15 +1,8 @@
 # qBit Manage
 
-Make sure to install the requirements.
-
 ## Installation
 
-### Using pipenv
-
-```bash
-cd ~/blackpearrl/qbit_manage
-pipenv install .
-```
+Please follow instructions from Ultra.cc to install qbit_manage available in the [documentation](https://docs.ultra.cc/unofficial-application-installers/qbit-manage).
 
 ## Configuration
 
