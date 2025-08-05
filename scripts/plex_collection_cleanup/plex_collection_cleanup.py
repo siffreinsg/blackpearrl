@@ -12,7 +12,7 @@ if not PLEX_TOKEN or not PLEX_SERVER_NAME:
     raise ValueError('Please provide PLEX_TOKEN and PLEX_SERVER_NAME in .env file')
 
 EXCEPTIONS = os.getenv('PLEX_CLEANUP_EXCEPTIONS', '').split(',')
-print(f'Exclusions for cleanup: {EXCEPTIONS.join(", ")}')
+print(f'Exclusions for cleanup: {", ".join(EXCEPTIONS)}')
 
 account = MyPlexAccount(token=PLEX_TOKEN)
 plex = account.resource(PLEX_SERVER_NAME).connect()
