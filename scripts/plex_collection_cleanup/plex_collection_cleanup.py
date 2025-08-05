@@ -11,6 +11,8 @@ PLEX_SERVER_NAME = os.getenv('PLEX_SERVER_NAME')
 if not PLEX_TOKEN or not PLEX_SERVER_NAME:
     raise ValueError('Please provide PLEX_TOKEN and PLEX_SERVER_NAME in .env file')
 
+EXCEPTIONS = os.getenv('PLEX_CLEANUP_EXCEPTIONS', '').split(',')
+
 account = MyPlexAccount(token=PLEX_TOKEN)
 plex = account.resource(PLEX_SERVER_NAME).connect()
 print(f'Connected to {plex.friendlyName}')
@@ -24,7 +26,7 @@ for section in sections:
     collections = plex.library.section(section.title).collections()
 
     for collection in collections:
-        if collection.childCount != 0:
+        if collection.childCount != 0 or collection.title in EXCEPTIONS:
             continue
         collection.delete()
         print(f'Deleted empty collection {collection.title} from {section.title}')
