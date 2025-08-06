@@ -143,17 +143,21 @@ orphaned:
   max_orphaned_files_to_delete: 35
   min_file_age_minutes: 0
 
+apprise:
+  api_url: !ENV QBT_APPRISE_URL
+  notify_url: !ENV QBT_NOTIFICATION_URL
+
 webhooks:
-  error: !ENV QBT_WEBHOOK_ERROR
-  run_start: !ENV QBT_WEBHOOK_RUN_START
-  run_end: !ENV QBT_WEBHOOK_RUN_END
+  error: apprise
+  run_start:
+  run_end:
   function:
-    recheck: !ENV QBT_WEBHOOK_RECHECK
-    cat_update: !ENV QBT_WEBHOOK_CAT_UPDATE
-    tag_update: !ENV QBT_WEBHOOK_TAG_UPDATE
-    rem_unregistered: !ENV QBT_WEBHOOK_REM_UNREGISTERED
-    tag_tracker_error: !ENV QBT_WEBHOOK_TAG_TRACKER_ERROR
-    rem_orphaned: !ENV QBT_WEBHOOK_REM_ORPHANED
-    tag_nohardlinks: !ENV QBT_WEBHOOK_TAG_NOHARDLINKS
-    share_limits: !ENV QBT_WEBHOOK_SHARE_LIMITS
-    cleanup_dirs: !ENV QBT_WEBHOOK_CLEANUP_DIRS
+    recheck:
+    cat_update:
+    tag_update:
+    rem_unregistered: apprise
+    tag_tracker_error: apprise
+    rem_orphaned: apprise
+    tag_nohardlinks: apprise
+    share_limits:
+    cleanup_dirs: apprise
