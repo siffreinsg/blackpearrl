@@ -51,12 +51,3 @@ source ~/blackpearrl/.profile
 
 Note that the `.profile` file is intended for bash and zsh. If you use a different shell, you may need to modify the file to work with your shell.
 Please review the file before sourcing it to ensure it is compatible with your shell and environment.
-
-## Install VueTorrent
-
-```sh
-cd ~/.apps
-git clone --depth=1 --single-branch --branch=latest-release https://github.com/VueTorrent/VueTorrent.git vuetorrent
-```
-
-Point WebUI root folder to ~/.apps/vuetorrent.

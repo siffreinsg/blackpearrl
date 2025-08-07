@@ -1,0 +1,9 @@
+[Unit]
+Description=Keep VueTorrent up-to-date service
+Wants=network-online.target
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.apps/vuetorrent # Replace with path to local VueTorrent git repository
+ExecStart=git pull

@@ -1,0 +1,12 @@
+[Unit]
+Description=Keep VueTorrent up-to-date timer
+
+[Timer]
+Unit=update-vuetorrent.service
+OnCalendar=weekly
+RandomizedDelaySec=1h
+AccuracySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
