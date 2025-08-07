@@ -53,7 +53,6 @@ cat:
   sonarr2-completed: /home/siffreinsg/downloads/qbittorrent/sonarr2-completed
   prowlarr: /home/siffreinsg/downloads/qbittorrent/prowlarr
   qbittorrent: /home/siffreinsg/downloads/qbittorrent/
-  # Uncategorized: /home/siffreinsg/downloads/qbittorrent/
 
 tracker:
   # Private trackers
@@ -67,6 +66,8 @@ tracker:
     tag: [private, milkie]
   torrentleech|tleechreload:
     tag: [private, torrentleech]
+  digitalcore:
+    tag: [private, digitalcore]
   # Public trackers
   nyaa:
     tag: [public, nyaa.si]
